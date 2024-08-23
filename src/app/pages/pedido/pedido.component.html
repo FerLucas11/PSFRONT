@@ -1,0 +1,52 @@
+<mat-toolbar color="primary" class="toolbar-centrado">
+    <span class="titulo-centrado">Gerenciador de Pedidos</span>
+
+    <span class="opcoes-cabecalho">
+      <a mat-button routerLink="">Menu</a>
+  </span>
+  </mat-toolbar>
+  
+  
+  <div class="container">
+    <div class="header-container">
+      <h1 class="titulo">Lista de Pedidos</h1>
+      <button mat-raised-button color="primary" routerLink="/adicionar-pedido" class="add-task-button">
+        Adicionar Pedido
+      </button>
+    </div>
+  
+    <div class="header-row">
+      <p class="header-item">Id</p>
+      <p class="header-item">Nome do Cliente</p>
+      <p class="header-item">E-mail do cliente</p>
+      <p class="header-item">Pago</p>
+      <p class="header-item">Valor total</p>
+      <p class="header-item">Ações</p>
+    </div>
+  
+  
+    <mat-card *ngFor="let item of pedido" class="custom-card">
+  
+      <mat-card-content class="content-row">
+        <p class="titulo-centrado">{{ item.id }}</p>
+        <p class="campo">{{ item.nomeCliente}}</p>
+        <p class="campo">{{ item.emailCliente }}</p>
+        <p class="campo">{{ item.pago == true ? 'Pago' : 'Pendente'}}</p>
+        <p class="campo">{{ item.valorTotal }}</p>
+
+        <div class="action-buttons">
+          <button mat-icon-button (click)="editar(item)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="excluir(item)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button (click)="concluir(item)">
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+  
+    </mat-card>
+    
+  </div>

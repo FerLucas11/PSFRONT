@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="toolbar-centrado">
+    <span class="titulo-centrado">Adicionar Novo Produto</span>
+  </mat-toolbar>
+  
+  <div class="container">
+    <form [formGroup]="produtoForm" (ngSubmit)="onSubmit()" class="form-container">
+      <mat-form-field class="full-width">
+        <mat-label>Nome do Produto</mat-label>
+        <input matInput formControlName="nomeProduto" placeholder="Nome do Produto" required>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-label>Valor</mat-label>
+        <input matInput formControlName="valor" placeholder="Valor do Produto">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="!produtoForm.valid" class="save-button">Salvar Produto</button>
+      <button mat-raised-button color="warn" routerLink="/produto" class="back-button">Voltar</button>
+    </form>
+  </div>

@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="toolbar-centrado">
+    <span class="titulo-centrado">Adicionar Novo Pedido</span>
+  </mat-toolbar>
+  
+  <div class="container">
+    <form [formGroup]="pedidoForm" (ngSubmit)="onSubmit()" class="form-container">
+      <mat-form-field class="full-width">
+        <mat-label>Nome do cliente</mat-label>
+        <input matInput formControlName="nomeCliente" placeholder="Nome do cliente" required>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-label>E-mail do cliente</mat-label>
+        <input matInput formControlName="emailCliente" placeholder="E-mail cliente">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Quantidade</mat-label>
+        <input matInput formControlName="quantidade" placeholder="Quantidade">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Produto</mat-label>
+        <mat-select formControlName="produtoId" placeholder="Selecione um produto">
+          <mat-option *ngFor="let produto of produtos" [value]="produto.id">
+            {{ produto.nomeProduto }} - R${{ produto.valor }}/unidade
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="!pedidoForm.valid" class="save-button">Salvar Pedido</button>
+      <button mat-raised-button color="warn" routerLink="/pedido" class="back-button">Voltar</button>
+    </form>
+  </div>

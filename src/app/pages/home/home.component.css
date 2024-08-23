@@ -1,0 +1,40 @@
+
+  .titulo-centrado {
+    font-size: 1.3em;
+    flex: 1;
+  }
+
+  .toolbar-centrado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .opcoes-cabecalho a {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+  }
+  
+  .centered-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3f51b5;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    color: #555;
+  }
